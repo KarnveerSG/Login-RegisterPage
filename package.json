@@ -1,0 +1,19 @@
+{
+  "name": "expense-calculator",
+  "version": "1.0.0",
+  "description": "Personal Project - Expense Calculator Cross Platform",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "\u0016https://github.com/KarnveerSG/ExpenseCalculator.git"
+  },
+  "author": "Karnveer Gill",
+  "license": "ISC",
+  "dependencies": {
+    "electron": "^10.1.1",
+    "firebase": "^7.19.1"
+  }
+}

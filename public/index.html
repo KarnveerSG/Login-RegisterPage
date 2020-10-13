@@ -1,0 +1,81 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Expense Calculator</title>
+
+    <link rel="stylesheet" href="style.css" type="text/css" />    <!--For performance, CSS before JS-->
+    <!-- update the version number as needed -->
+    <script defer src="/__/firebase/7.19.1/firebase-app.js"></script>
+    <!-- include only the Firebase features as you need -->
+    <script defer src="/__/firebase/7.19.1/firebase-auth.js"></script>
+    <script defer src="/__/firebase/7.19.1/firebase-database.js"></script>
+    <script defer src="/__/firebase/7.19.1/firebase-messaging.js"></script>
+    <script defer src="/__/firebase/7.19.1/firebase-storage.js"></script>
+    <!-- initialize the SDK after all desired features are loaded -->
+    <script defer src="/__/firebase/init.js"></script>
+    <script type="text/javascript " src="app.js"></script>
+</head>
+<body>
+    <div class= "hero"> 
+        <div class="form-box">
+            <div class="button-box">
+                <div id="btn"></div>
+                <button type="button" class="toggle-btn" onclick ="login()"> Login-In </button>
+                <button type="button" class="toggle-btn" onclick ="register()"> Register </button>
+            </div>
+            <div class="social-icons">
+                <img src="FaceBook.PNG" onclick="facebookLogin()"/>
+                <img src="Google.PNG" onclick="googleLogin()"/> 
+                </div>
+            <form id="login" class="input-group">
+                <input id="loginText"type="text" class="input-field" placeholder="Email Required" autocomplete="username"
+                       required />
+                <input id="passwordText" type="password" class="input-field" placeholder="Password Required" autocomplete="current-password"
+                       required />
+                <input id="showPwd" type="checkbox" onclick="showPass()" class="chech-box"><span>Show Password</span> 
+                <button id="loginButton"type="submit" class="submitL-btn" onclick="Login()">Log In</button>
+            </form>
+            <form id="register" class="input-group">
+                <input id="userRegisterTest" type="text" class="input-field" placeholder="User ID" required /> 
+                <input id="emailRegisterText" type="text" class="input-field" placeholder="Email ID" autocomplete="username"
+                       required />
+                <input id="passwordRegisterText" type="password" class="input-field" placeholder="Password Required" autocomplete="new-password"
+                       required />
+                <input id="passwordConfirmRegisterText" type="password" class="input-field" placeholder="Confirm Password" autocomplete="new-password"
+                       required />
+                <button id="registerButton" type="submit" class="submitR-btn" onclick="Register()">Register</button>
+            </form>
+        </div> 
+    </div>
+
+    <script>
+        var x = document.getElementById("login");
+        var y = document.getElementById("register");
+        var z = document.getElementById("btn");
+
+        function register() {
+            x.style.left = "-400px";
+            y.style.left = "50px";
+            z.style.left = "190px";
+        }
+
+        function login() {
+            x.style.left = "50px";
+            y.style.left = "450px";
+            z.style.left = "0px";
+        }
+
+        function showPass() {
+            var x = document.getElementById("passwordText");
+            if (x.type === "password") {
+                x.type = "text";
+            } else {
+                x.type = "password";
+            }
+        }
+    </script>
+</body>
+</html>
+
