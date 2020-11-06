@@ -24,7 +24,7 @@ const registerButton = document.getElementById('passwordRegisterText');
         console.log(emailRegisterText.value);
         if (emailRegisterText.value == null) { 
         }
-        const email = emailRegisterText.value;   //<-- Here lies the problem, this is null when program reads it
+        const email = emailRegisterText.value;   
         const pass = passwordRegisterText.value; // (uncaught reference error: cannot access ___ before initialization )
         const passConfirm = passwordConfirmRegisterText.value;
         const auth1 = firebase.auth();
@@ -37,13 +37,13 @@ const registerButton = document.getElementById('passwordRegisterText');
 }
 
 //Checks whether someone is logged in or not
-/* firebase.auth().onAuthStateChanged(firebaseUser => {
+  firebase.auth().onAuthStateChanged(firebaseUser => {
     if (firebaseUser) {
         console.log(firebaseUser);
     } else {
         console.log("Currently not logged in!")
     }
-})  */
+})  
 
 function googleLogin() {
     const provider = new firebase.auth.GoogleAuthProvider();
